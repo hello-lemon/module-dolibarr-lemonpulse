@@ -1,0 +1,53 @@
+# LemonPulse — English translations
+
+ModuleLemonPulseName=LemonPulse
+ModuleLemonPulseDesc=Dashboard widget for revenue (current fiscal year, YoY comparison, indicative result)
+
+# Widget
+BoxLemonPulseTitle=Revenue
+LemonPulseCAEnCours=Current fiscal year revenue
+LemonPulseCAN1MemePeriode=Previous year (same period)
+LemonPulseCAN1Complet=Full previous fiscal year
+LemonPulseObjectif=Annual target
+LemonPulseSectionAchats=Supplier purchases
+LemonPulseAchatsEnCours=Current fiscal year purchases
+LemonPulseAchatsN1MemePeriode=Previous year (same period)
+LemonPulseSectionResultat=Result
+LemonPulseResultatIndicatif=Indicative result (Revenue - Purchases)
+LemonPulseNoteIndicatif=Indicative. Based on validated invoices, excluding actual accounting.
+
+# Setup
+LemonPulseSetup=LemonPulse configuration
+LemonPulseSetupTitle=Revenue widget settings
+LemonPulseFiscalMonthStart=Fiscal year start month
+LemonPulseFiscalMonthStartHelp=Auto-detected from company config or Accounting module. Pick a month to override.
+LemonPulseObjectifAnnuel=Annual revenue target
+LemonPulseObjectifAnnuelHelp=Annual revenue target. Set to 0 to disable progress bar.
+LemonPulseSaved=Configuration saved.
+
+# Auto-detect fiscal month
+LemonPulseAutoLabel=Auto — %s (%s)
+LemonPulseAutoSourceSociete=company config
+LemonPulseAutoSourceCompta=Accounting module
+LemonPulseAutoSourceDefault=default January
+
+# Update banner
+LemonPulseUpdateAvailable=New version available
+LemonPulseUpdateAvailableMsg=Version %s is available on GitHub (you have %s).
+LemonPulseUpdateSeeRelease=See release
+
+# About Lemon
+LemonPulseAboutTitle=About Lemon
+LemonPulseAboutIntro=LemonPulse is published by <strong>Lemon</strong>, a web and communication agency in Clermont-Ferrand (France) since 2012. Five complementary divisions for your digital and physical projects:
+LemonPulseAboutSvc1Title=Lemon Digital
+LemonPulseAboutSvc1Desc=web development (WordPress, Astro, custom applications)
+LemonPulseAboutSvc2Title=Lemon Strat
+LemonPulseAboutSvc2Desc=communication strategy, branding, consulting
+LemonPulseAboutSvc3Title=Lemon Print
+LemonPulseAboutSvc3Desc=offset/digital printing, signage, packaging
+LemonPulseAboutSvc4Title=Lemon Maker
+LemonPulseAboutSvc4Desc=digital fabrication (3D printing, laser cutting, prototyping)
+LemonPulseAboutSvc5Title=Lemon TechPro
+LemonPulseAboutSvc5Desc=IT consulting, managed services, custom Dolibarr modules
+LemonPulseAboutCTA=Discover Lemon
+LemonPulseAboutLocation=Clermont-Ferrand · hello@hellolemon.fr

@@ -1,0 +1,53 @@
+# LemonPulse — traductions françaises
+
+ModuleLemonPulseName=LemonPulse
+ModuleLemonPulseDesc=Widget tableau de bord chiffre d'affaires (exercice en cours, comparaison N-1, résultat indicatif)
+
+# Widget
+BoxLemonPulseTitle=Chiffre d'affaires
+LemonPulseCAEnCours=CA exercice en cours
+LemonPulseCAN1MemePeriode=CA N-1 (même période)
+LemonPulseCAN1Complet=CA exercice N-1 complet
+LemonPulseObjectif=Objectif annuel
+LemonPulseSectionAchats=Achats fournisseurs
+LemonPulseAchatsEnCours=Achats exercice en cours
+LemonPulseAchatsN1MemePeriode=Achats N-1 (même période)
+LemonPulseSectionResultat=Résultat
+LemonPulseResultatIndicatif=Résultat indicatif (CA - achats)
+LemonPulseNoteIndicatif=Indicatif. Basé sur les factures validées HT, hors comptabilité analytique réelle.
+
+# Setup
+LemonPulseSetup=Configuration LemonPulse
+LemonPulseSetupTitle=Paramètres du widget chiffre d'affaires
+LemonPulseFiscalMonthStart=Mois de début de l'exercice fiscal
+LemonPulseFiscalMonthStartHelp=Détecté automatiquement depuis la config société ou le module Comptabilité. Choisir un mois pour forcer un override custom.
+LemonPulseObjectifAnnuel=Objectif annuel de CA HT
+LemonPulseObjectifAnnuelHelp=Objectif annuel de chiffre d'affaires HT à atteindre. Mettre 0 pour désactiver l'affichage de la barre de progression.
+LemonPulseSaved=Configuration enregistrée.
+
+# Auto-détection mois exercice
+LemonPulseAutoLabel=Auto — %s (%s)
+LemonPulseAutoSourceSociete=config société
+LemonPulseAutoSourceCompta=module Comptabilité
+LemonPulseAutoSourceDefault=défaut janvier
+
+# Mise à jour
+LemonPulseUpdateAvailable=Nouvelle version disponible
+LemonPulseUpdateAvailableMsg=La version %s est disponible sur GitHub (vous utilisez la %s).
+LemonPulseUpdateSeeRelease=Voir la release
+
+# À propos de Lemon
+LemonPulseAboutTitle=À propos de Lemon
+LemonPulseAboutIntro=LemonPulse est édité par <strong>Lemon</strong>, agence web et communication à Clermont-Ferrand depuis 2012. Cinq pôles complémentaires pour vos projets digitaux et physiques :
+LemonPulseAboutSvc1Title=Lemon Digital
+LemonPulseAboutSvc1Desc=développement web (sites WordPress, Astro, applications sur mesure)
+LemonPulseAboutSvc2Title=Lemon Strat
+LemonPulseAboutSvc2Desc=stratégie de communication, branding, conseil
+LemonPulseAboutSvc3Title=Lemon Print
+LemonPulseAboutSvc3Desc=impression offset/numérique, signalétique, packaging
+LemonPulseAboutSvc4Title=Lemon Maker
+LemonPulseAboutSvc4Desc=fabrication numérique (impression 3D, découpe laser, prototypage)
+LemonPulseAboutSvc5Title=Lemon TechPro
+LemonPulseAboutSvc5Desc=conseil IT, infogérance, modules Dolibarr custom
+LemonPulseAboutCTA=Découvrir Lemon
+LemonPulseAboutLocation=Clermont-Ferrand · hello@hellolemon.fr
