@@ -16,6 +16,9 @@ LemonPulseSectionResultat=Résultat
 LemonPulseResultatIndicatif=Résultat indicatif (CA - achats)
 LemonPulseNoteIndicatif=Indicatif. Basé sur les factures validées HT, hors comptabilité analytique réelle.
 
+# Onglets
+LemonPulseTabHowto=Mode d'emploi
+
 # Setup
 LemonPulseSetup=Configuration LemonPulse
 LemonPulseSetupTitle=Paramètres du widget chiffre d'affaires
@@ -33,8 +36,8 @@ LemonPulseAutoSourceDefault=défaut janvier
 
 # Mise à jour
 LemonPulseUpdateAvailable=Nouvelle version disponible
-LemonPulseUpdateAvailableMsg=La version %s est disponible sur GitHub (vous utilisez la %s).
-LemonPulseUpdateSeeRelease=Voir la release
+LemonPulseUpdateAvailableMsg=La version %s est disponible (vous utilisez la %s).
+LemonPulseUpdateSeeRelease=Voir la page du module
 
 # À propos de Lemon
 LemonPulseAboutTitle=À propos de Lemon

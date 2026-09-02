@@ -49,7 +49,11 @@ class modLemonPulse extends DolibarrModules
 		$this->descriptionlong = "LemonPulse ajoute un widget sur le tableau de bord Dolibarr affichant le chiffre d'affaires de l'exercice fiscal en cours, la comparaison avec la même période de l'exercice précédent, le CA total de l'exercice précédent, les achats fournisseurs de l'exercice et le résultat indicatif (CA - achats). Le mois de début d'exercice est paramétrable.";
 		$this->editor_name = 'Lemon';
 		$this->editor_url = 'https://hellolemon.fr';
-		$this->version = '0.2.0';
+		// Fichier texte ne contenant que le numéro de version. Lu par le cœur
+		// (badge de la liste des modules, si CHECKLASTVERSION_EXTERNALMODULE est
+		// activé) ET par le bandeau de notre page de configuration.
+		$this->url_last_version = 'https://hellolemon.fr/dolibarr/versions/lemonpulse.txt';
+		$this->version = '1.0.0';
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		$this->picto = 'bill';
 

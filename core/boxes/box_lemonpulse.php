@@ -268,16 +268,36 @@ class box_lemonpulse extends ModeleBoxes
 		$sql = "SELECT SUM(f.total_ht) as total";
 		$sql .= " FROM ".MAIN_DB_PREFIX.$table." as f";
 		$sql .= " WHERE f.fk_statut > 0";
+
+		// Une facture REMPLACÉE reste en base à côté de celle qui la remplace :
+		// les compter toutes les deux gonfle le chiffre d'affaires du montant de
+		// la première, sans que rien ne le signale. Le cœur écarte exactement ce
+		// cas dans FactureStats ; on reprend sa clause, côté client seulement.
+		//
+		// Les AUTRES clôtures en statut 3 restent comptées, volontairement : une
+		// créance abandonnée a bien été facturée, elle appartient au chiffre
+		// d'affaires de la période (sa perte se traite en charge, pas en moins-CA).
+		//
+		// COALESCE parce que `close_code` est NULLable : sans lui, une facture
+		// abandonnée sans motif renseigné rendrait la condition NULL, donc fausse,
+		// et sortirait du total — le cœur a cette fragilité, pas nous.
+		if ($table === 'facture') {
+			$sql .= " AND (f.fk_statut <> 3 OR COALESCE(f.close_code, '') <> 'replaced')";
+		}
+
 		$sql .= " AND f.entity IN (".getEntity($entity_key).")";
 		$sql .= " AND f.datef >= '".$this->db->idate($date_start)."'";
 		$sql .= " AND f.datef <= '".$this->db->idate($date_end)."'";
 
 		$resql = $this->db->query($sql);
-		if ($resql) {
-			$obj = $this->db->fetch_object($resql);
-			return (float) ($obj->total ?? 0);
+		if (!$resql) {
+			// Sans cette trace, une requête cassée s'affiche comme un chiffre
+			// d'affaires à zéro — indiscernable d'une période sans vente.
+			dol_syslog('box_lemonpulse::sumTotalHT '.$this->db->lasterror(), LOG_ERR);
+			return 0.0;
 		}
-		return 0.0;
+		$obj = $this->db->fetch_object($resql);
+		return (float) ($obj->total ?? 0);
 	}
 
 	/**

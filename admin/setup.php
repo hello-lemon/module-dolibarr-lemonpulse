@@ -70,10 +70,14 @@ llxHeader('', $langs->trans('LemonPulseSetup'));
 $linkback = '<a href="'.DOL_URL_ROOT.'/admin/modules.php?restore_lastsearch_values=1">'.$langs->trans("BackToModuleList").'</a>';
 print load_fiche_titre($langs->trans('LemonPulseSetup'), $linkback, 'title_setup');
 
-// Bandeau "Nouvelle version disponible" si une release > locale est trouvée sur GitHub
+$head = lemonpulseAdminPrepareHead();
+print dol_get_fiche_head($head, 'settings', $langs->trans('ModuleLemonPulseName'), -1, 'bill');
+
+// Bandeau "Nouvelle version disponible". L'URL vient du descripteur : le cœur
+// et nous lisons ainsi le même fichier, il n'y a qu'une version de référence.
 require_once dirname(__DIR__).'/core/modules/modLemonPulse.class.php';
 $modDesc = new modLemonPulse($db);
-$updateInfo = lemonpulse_check_latest_release($db, $modDesc->version);
+$updateInfo = lemonpulse_check_latest_release($db, $modDesc->version, $modDesc->url_last_version);
 if ($updateInfo !== null) {
 	print '<div class="warning" style="margin:8px 0;padding:10px;border-left:4px solid #e67e22;background:#fff3e0;">';
 	print '<strong>'.$langs->trans("LemonPulseUpdateAvailable").'</strong> : ';
@@ -143,6 +147,8 @@ print '<input type="submit" class="button" value="'.$langs->trans('Save').'">';
 print '</div>';
 
 print '</form>';
+
+print dol_get_fiche_end();
 
 // Bloc "À propos de Lemon" — vitrine éditeur
 print '<div style="margin:30px 0;padding:20px 25px;border:1px solid #e0e0e0;border-left:4px solid #FFD21F;border-radius:6px;background:linear-gradient(135deg,#fffef7 0%,#fafafa 100%);">';

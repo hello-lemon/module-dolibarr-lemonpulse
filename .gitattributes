@@ -1,0 +1,4 @@
+# Exclusions d'archive : git archive doit produire le contenu du paquet livré,
+# ni plus ni moins. Ce qui sert au dépôt n'a rien à faire chez le client.
+/.gitattributes export-ignore
+/.gitignore export-ignore

@@ -4,7 +4,7 @@ Module Dolibarr qui ajoute un widget tableau de bord moderne affichant le pouls 
 
 [![Dolibarr](https://img.shields.io/badge/Dolibarr-18.0%2B-9bd3ed)](https://www.dolibarr.org/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.0-orange)](https://github.com/hello-lemon/module-dolibarr-lemonpulse/releases)
+[![Version](https://img.shields.io/badge/version-1.0.0-orange)](https://github.com/hello-lemon/module-dolibarr-lemonpulse/releases)
 
 ---
 
@@ -29,7 +29,9 @@ Les couleurs des pills suivent une logique métier : **▲ vert** pour une évol
   4. Sinon, janvier par défaut
 - **Objectif annuel** paramétrable (0 = désactivé)
 - **Multi-entité** : respecte l'entité Dolibarr courante via `getEntity('invoice')` et `getEntity('facture_fourn')`
-- **Notification mise à jour** : vérifie GitHub releases (cache 24h)
+- **Notification mise à jour** : lit le fichier de version publié par l'éditeur
+  (`url_last_version`), en cache 24 h — succès comme échec, pour qu'un serveur
+  injoignable ne ralentisse jamais la page de configuration
 - **Multi-langue** : FR + EN
 
 ## Installation
@@ -72,14 +74,16 @@ Le widget est visible par tout utilisateur ayant l'un des deux droits suivants :
 
 ## Notes méthodologiques
 
-- Les calculs sont **indicatifs** : sommes brutes du `total_ht` des factures avec `fk_statut > 0` (validées et payées). Hors comptabilité analytique réelle, hors écritures comptables manuelles.
+- Les calculs sont **indicatifs** : sommes brutes du `total_ht` des factures validées, payées ou closes. Hors comptabilité analytique réelle, hors écritures comptables manuelles, hors salaires, charges et amortissements — le « résultat » affiché n'est donc pas un résultat comptable.
 - Les **avoirs** (factures de type 2) sont inclus avec leur `total_ht` négatif → ils réduisent le CA, comme attendu.
-- Les factures **brouillons** (statut 0) et **annulées** (statut négatif) sont exclues.
+- Les factures **brouillons** sont exclues : une facture non validée n'existe pas encore.
+- Une facture close avec le motif **« remplacée »** est exclue du CA, sa remplaçante étant elle aussi en base : les compter toutes les deux doublerait la vente. C'est la règle appliquée par les statistiques de Dolibarr (`FactureStats`).
+- Les autres clôtures (créance abandonnée) restent comptées : le chiffre d'affaires a bien été réalisé, la perte se traite en charge.
 - Période : du 1er jour du mois fiscal de l'année courante jusqu'à aujourd'hui (inclus). Comparaison N-1 sur la même fenêtre décalée d'un an.
 
 ## Compatibilité
 
-- **Dolibarr** : 18.0 et supérieur (testé jusqu'à 22.x)
+- **Dolibarr** : 18.0 et supérieur (tourne en 23.0.x)
 - **PHP** : 7.4 minimum
 - **Dépendance** : module `facture` activé (déclaré dans le descripteur)
 
@@ -89,7 +93,7 @@ Lecture seule :
 
 - `llx_facture` (factures clients)
 - `llx_facture_fourn` (factures fournisseurs)
-- `llx_const` (constantes de configuration et cache du check de mise à jour)
+- `llx_const` (constantes de configuration et cache du contrôle de mise à jour)
 
 Aucune table custom créée par le module.
 
@@ -116,6 +120,8 @@ Cinq pôles complémentaires :
 [GPL-3.0](LICENSE) — comme Dolibarr.
 
 ## Changelog
+
+Le détail des versions est dans [ChangeLog.md](ChangeLog.md).
 
 ### 0.2.0 — 2026-04-29
 - Refonte design en mode minimaliste (style Stripe/Linear)

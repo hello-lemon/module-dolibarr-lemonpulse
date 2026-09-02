@@ -16,6 +16,9 @@ LemonPulseSectionResultat=Result
 LemonPulseResultatIndicatif=Indicative result (Revenue - Purchases)
 LemonPulseNoteIndicatif=Indicative. Based on validated invoices, excluding actual accounting.
 
+# Onglets
+LemonPulseTabHowto=User guide
+
 # Setup
 LemonPulseSetup=LemonPulse configuration
 LemonPulseSetupTitle=Revenue widget settings
@@ -33,8 +36,8 @@ LemonPulseAutoSourceDefault=default January
 
 # Update banner
 LemonPulseUpdateAvailable=New version available
-LemonPulseUpdateAvailableMsg=Version %s is available on GitHub (you have %s).
-LemonPulseUpdateSeeRelease=See release
+LemonPulseUpdateAvailableMsg=Version %s is available (you have %s).
+LemonPulseUpdateSeeRelease=See module page
 
 # About Lemon
 LemonPulseAboutTitle=About Lemon
