@@ -74,9 +74,12 @@ class modLemonPulse extends DolibarrModules
 		$this->tables = array();
 
 		// Constantes paramétrables (admin/setup.php)
+		// Dernier paramètre à 0 : jamais effacées à la désactivation. remove() est
+		// appelé à chaque toggle, et une mise à jour passe par désactiver/réactiver :
+		// à 1, les réglages du client revenaient à leurs valeurs par défaut.
 		$this->const = array(
-			0 => array('LEMONPULSE_FISCAL_MONTH_START', 'chaine', '0', 'Mois début exercice fiscal (0=auto, 1-12=override)', 0, 'current', 1),
-			1 => array('LEMONPULSE_OBJECTIF_ANNUEL', 'chaine', '0', 'Objectif annuel de CA HT (0 = désactivé)', 0, 'current', 1),
+			0 => array('LEMONPULSE_FISCAL_MONTH_START', 'chaine', '0', 'Mois début exercice fiscal (0=auto, 1-12=override)', 0, 'current', 0),
+			1 => array('LEMONPULSE_OBJECTIF_ANNUEL', 'chaine', '0', 'Objectif annuel de CA HT (0 = désactivé)', 0, 'current', 0),
 		);
 
 		// Permissions
