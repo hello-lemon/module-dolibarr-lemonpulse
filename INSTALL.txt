@@ -1,0 +1,56 @@
+LemonPulse : installation
+=========================
+
+1. INSTALLER, au choix
+
+   A. Depuis Dolibarr (le plus simple)
+      Accueil > Configuration > Modules > onglet « Déployer/Installer un module externe ».
+      Envoyez le fichier module_lemonpulse-x.y.z.zip tel que vous l'avez
+      téléchargé, sans le décompresser.
+
+   B. Par copie de fichiers (si cet onglet est absent ou verrouillé)
+      Copiez le dossier « lemonpulse » dans le dossier « custom » de Dolibarr :
+      htdocs/custom/lemonpulse
+
+2. ACTIVER
+   Accueil > Configuration > Modules : cherchez LemonPulse et activez-le.
+
+3. CONFIGURER
+   Cliquez sur la roue dentée du module. L'onglet « Mode d'emploi » explique pas à pas
+   sa mise en route.
+
+METTRE À JOUR
+   Installez la nouvelle version par la méthode A, ou remplacez le dossier
+   « lemonpulse » par la méthode B, puis désactivez et réactivez le module.
+   Vos réglages sont conservés.
+
+Besoin d'aide : hello@hellolemon.fr
+
+
+LemonPulse: installation
+========================
+
+1. INSTALL, either way
+
+   A. From Dolibarr (easiest)
+      Home > Setup > Modules > "Deploy/install external app/module" tab.
+      Upload the file module_lemonpulse-x.y.z.zip as downloaded,
+      without unzipping it.
+
+   B. By copying files (if that tab is missing or locked)
+      Copy the "lemonpulse" folder into Dolibarr's "custom" folder:
+      htdocs/custom/lemonpulse
+
+2. ENABLE
+   Home > Setup > Modules: find LemonPulse and switch it on.
+
+3. SET UP
+   Click the module's gear icon. The "User guide" tab walks you through getting
+   started.
+
+UPDATE
+   Install the new version with method A, or replace the "lemonpulse" folder
+   with method B, then disable and re-enable the module.
+   Your settings are kept.
+
+Need help: hello@hellolemon.fr

@@ -3,6 +3,18 @@
 Ce fichier alimente l'onglet « Fichier ChangeLog » de la fiche du module dans
 Dolibarr (Configuration → Modules → picto information).
 
+## Non publié
+
+**L'installation s'explique dès l'ouverture du ZIP.** Un fichier `INSTALL.txt`,
+en français et en anglais, donne les deux façons d'installer le module (depuis
+le menu de Dolibarr, sans décompresser, ou par copie dans `custom`), son
+activation, où trouver le mode d'emploi, et comment le mettre à jour.
+
+**Désactiver puis réactiver le module ne remet plus ses réglages à zéro.** Ils
+étaient déclarés pour être effacés à la désactivation : une mise à jour faite
+dans les règles, qui passe par désactiver puis réactiver le module, les
+ramenait à leurs valeurs par défaut. Ils sont désormais conservés.
+
 ## 1.0.0 — 2 septembre 2026
 
 Première version publique. Le module est diffusé gratuitement.
